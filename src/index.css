@@ -4,5 +4,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html ,body ,#root{
-  height: 100%;
+  
+}
+
+@theme{ 
+
+/* bg-[var(--bg-lightBg)]   because we cant use gradiants in back ground for tailwind*/
+
+--color-primaryBlue:#006bb3;
+
+
+
+    
+
+        --color-myColor:black;
+}
+
+@import "tailwindcss";
+
+@layer components {
+  .btn-grad {
+    @apply m-2 px-10 py-3 text-center uppercase text-white rounded-lg transition-all duration-500;
+
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+  }
+
+  .btn-grad:hover {
+    background-position: right center;
+  }
 }
